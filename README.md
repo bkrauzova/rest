@@ -22,6 +22,7 @@ TODO: alerts, maybe admin and sys stuff as well
 
 ### TOPOLOGY
   * /asset/topology?from=sth&recursive=sth..	# GET, currently - topology/location
+
   parameter | description
   ----------|-------------
   from | starting point of requested topology
