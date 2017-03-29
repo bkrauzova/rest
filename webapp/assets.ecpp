@@ -1,0 +1,20 @@
+<#
+# rest API
+#>
+<%pre>
+#include <czmq.h>
+#include <cxxtools/split.h>
+</%pre>
+<%args>
+  // define the query parameters
+    asset_id = request.getArg ("asset-id");
+</%args>
+<%cpp>
+    printf("asset-id: %s", asset_id.c_str ());
+
+
+    if (asset_id.empty ())
+</%cpp>
+        {"output" : "all assets"}
+%   else
+        {"asset_id" : "one asset ";

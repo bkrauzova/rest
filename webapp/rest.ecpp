@@ -1,0 +1,58 @@
+<%pre>
+// put your includes here
+#include <my/foo.h>
+</%pre>
+<%args>
+
+  // define the query parameters
+  // bar;
+  int intValue = 0;
+  bool add;
+  bool reset;
+
+</%args>
+<%session>
+
+  // define your session scope variables here
+  my::Foo foo;
+
+</%session>
+<%cpp>
+
+  // put your C++ code here
+
+  if (add)
+  {
+    log_debug("add");
+    foo.addIntValue(intValue);
+  }
+
+  if (reset)
+  {
+    log_debug("reset");
+    foo.setIntValue(0);
+  }
+
+  foo.setStringValue("Hello world!");
+
+
+</%cpp>
+<html>
+ <head>
+  <title>ecpp-application rest</title>
+ </head>
+ <body>
+  <h1>rest</h1>
+  <p><$ foo.getStringValue() $></p>
+  <p>Value=<$ foo.getIntValue() $></p>
+
+  <form method="post">
+   <input type="text" name="intValue" value="<$intValue$>">
+   <input type="submit" name="add" value="add">
+   <input type="submit" name="reset" value="reset">
+  </form>
+
+ </body>
+</html>
+
+%   return DECLINED;

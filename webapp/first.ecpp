@@ -1,0 +1,12 @@
+<html>
+ <head>
+  <title>ecpp-application rest</title>
+ </head>
+ <body>
+  <h1>rest</h1>
+
+  <p>first</p>
+ </body>
+</html>
+
+% return DECLINED;
