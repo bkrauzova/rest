@@ -21,14 +21,22 @@ TODO: alerts, maybe admin and sys stuff as well
 
 
 ### TOPOLOGY
-  * /asset/topology?from=sth&recursive=sth..	# GET
+  * /asset/topology?from=sth&recursive=sth..	# GET, currently - topology/location
+  parameter | description
+  ----------|-------------
+  from | starting point of requested topology
+  to | end point of the topology
+  recursive | true/false recursive walk
+  feed_by | - no idea-
+  filter | filter by asset type
+
   * /asset/topology/power?filter,from,to,..  	# GET
     * (/asset/power_topology?filtr=...from)
 
 
 ### (ASSETS-PW CHAIN)
   * /asset/<dc_id>/powerchain			# GET
-    *(/asset/topology/powerchain?id=)		# currently topology call
+    * (/asset/topology/powerchain?id=)		# currently topology call
 
 ### METRICS
   * /metric/current_metrics?ids=1,2,3,4		# GET, more, than 1 asset?!
