@@ -4,6 +4,17 @@
 *.o
 *.obj
 
+# autoconf
+Makefile
+Makefile.in
+aclocal.m4
+autom4te.cache/
+config.log
+config.status
+config/
+configure
+libtool
+
 # Precompiled Headers
 *.gch
 *.pch
@@ -27,3 +38,6 @@
 *.exe
 *.out
 *.app
+
+# Backups
+*~
