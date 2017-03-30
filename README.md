@@ -1,5 +1,7 @@
 This document proposes new structure of REST API
-NOTE: this is just to give brief overview of the approach I chose. It not complete.
+
+NOTE: this is just to give brief overview of the approach I chose. It's not complete.
+
 TODO: alerts, maybe admin and sys stuff as well
 
 ### ASSETS
@@ -11,7 +13,6 @@ TODO: alerts, maybe admin and sys stuff as well
   * /asset/groups				# GET
   * /asset/device/upses			 	# GET
   * /asset/<asset-id>			 	# GET, DELETE (PUT, POST - both done by csv import now)
-
 
 ### EXP/IMP
   * /assets/csv					# GET - export
@@ -25,11 +26,11 @@ TODO: alerts, maybe admin and sys stuff as well
 
   parameter | description
   ----------|-------------
-  from | starting point of requested topology
-  to | end point of the topology
+  from	    | starting point of requested topology
+  to        | end point of the topology
   recursive | true/false recursive walk
-  feed_by | - no idea-
-  filter | filter by asset type
+  feed_by   | who knows
+  filter    | filter by asset type
 
   * /asset/topology/power?filter,from,to,..  	# GET
     * (/asset/power_topology?filtr=...from)

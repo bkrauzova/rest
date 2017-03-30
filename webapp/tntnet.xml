@@ -6,16 +6,28 @@
   -->
 <tntnet>
   <mappings>
-    <!-- map / to calc@calc -->
+    <!-- map ASSETS -->
     <mapping>
-      <target>calc@calc</target>
-      <url>^/$</url>
+      <target>assets@rest</target>
+      <url>^/assets$</url>
+      <method>GET</method>
     </mapping>
-    <!-- map /comp.* or /comp to comp@calc -->
     <mapping>
-      <target>$1@calc</target>
-      <url>^/([^.]+)(\..+)?</url>
+      <target>assets@rest</target>
+      <url>^/asset/(.+)$</url>
+      <args>
+	<asset_id>$1</asset_id>
+      </args>
     </mapping>
+    <mapping>
+      <target>asset_types@rest</target>
+      <url>^/asset/(datacenter|room|rack|device)s$</url>
+      <args>
+	<asset_type>$1</asset_type>
+      </args>
+    </mapping>
+
+
   </mappings>
 
   <!-- listen to a port (empty string means any local interface) -->
