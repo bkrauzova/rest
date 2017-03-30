@@ -4,6 +4,7 @@
 *.o
 *.obj
 *.cpp
+webapp/*.cpp
 
 # autoconf
 Makefile
@@ -24,6 +25,10 @@ libtool
 *.so
 *.dylib
 *.dll
+lib*.a
+lib*.la
+lib*.so
+lib*.so.*
 
 # Fortran module files
 *.mod
@@ -42,3 +47,5 @@ libtool
 
 # Backups
 *~
+
+stamp-h1
