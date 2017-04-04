@@ -22,25 +22,25 @@ TODO: alerts, topo, maybe admin and sys stuff as well
   URI					|       methods + some desc.
 ----------------------------------------|-------------------------------
    /assets/csv				| GET - export
-    * (/assets?type=csv)		|
+   alt. (/assets?type=csv)		| GET
    /assets/csv				| POST - import
-    * (/assets?type=csv)		|
+   alt. (/assets?type=csv)		| POST
 
 ### (ASSETS-PW CHAIN)
 
   URI					|       methods + some desc.
 ----------------------------------------|-------------------------------
    /assets/<dc_id>/powerchain		| GET
-    * (/assets/topology/powerchain?id=)	| currently topology call
+   alt. (/assets/topology/powerchain?id=)	| currently topology call
 
 ### METRICS IN ASSET ns
 
   URI					|       methods + some desc.
 ----------------------------------------|-------------------------------
-   /assets/<dc_id>/uptime               |
+   /assets/<dc_id>/uptime               | GET
    /assets/<id_rack>/power?type=avg_power_last_day,avg_power_last_week ...    | GET, rack total is does not return much info, but not consistent?
    /assets/<id_dc>/indicators/<type>	| GET
-   /assets/<asset_id>/currect_metrics   |
+   /assets/<asset_id>/currect_metrics   | GET
 
 
 ### TOPOLOGY IN ASSET ns - TODO
