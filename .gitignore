@@ -4,7 +4,7 @@
 *.o
 *.obj
 *.cpp
-webapp/*.cpp
+webapp/assets.cpp
 
 # autoconf
 Makefile
@@ -29,6 +29,7 @@ lib*.a
 lib*.la
 lib*.so
 lib*.so.*
+*.Plo
 
 # Fortran module files
 *.mod
