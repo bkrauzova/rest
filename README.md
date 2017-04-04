@@ -59,8 +59,8 @@ ________________________________________________________________________________
 ### ALERTS
   * /alerts				        # GET, aletrs with state (all, active, ack-wip...)
   * /alerts/<alert_state>
-  * /alerts/<aletr_state>/<asset-id>
-  * /alerts/<asset_id>/<state>/<recursive>
+  * /alerts/<alert_state>/<asset_id>
+  * /alerts/<asset_id>/<alert_state>/<_recursive>
   * /alerts/rules				# GET, POST
   * /alerts/rules/<rule_type>				# GET, patter/threshold/all/ single
   * /alerts/rules/<rule_name>				# GET, PUT (update) skipping par. rule_class (i have no idea what it is good for)
