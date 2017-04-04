@@ -5,30 +5,42 @@ NOTE: this is just to give brief overview of the approach I chose. It's not comp
 TODO: alerts, topo, maybe admin and sys stuff as well
 
 ### ASSETS
-  * /assets					# GET, POST (create)
-  * /assets/datacenters			 	# GET
-  * /assets/rooms				# GET
-  * /assets/racks				# GET
-  * /assets/devices				# GET
-  * /assets/groups				# GET
-  * /assets/device/upses			# GET
-  * /assets/<asset_id>			 	# GET, DELETE (PUT - done by csv import now)
+
+  URI					|       methods + some desc.
+-----------------------------------------------------------------------
+   /assets				| GET, POST (create)
+   /assets/datacenters			| GET
+   /assets/rooms			| GET
+   /assets/racks			| GET
+   /assets/devices			| GET
+   /assets/groups			| GET
+   /assets/device/upses			| GET
+   /assets/<asset_id>			| GET, DELETE (PUT - done by csv import now)
 
 #### EXP/IMP
-  * /assets/csv					# GET - export
-    * (/assets?type=csv)
-  * /assets/csv				 	# POST - import
-    * (/assets?type=csv)
+
+  URI					|       methods + some desc.
+-----------------------------------------------------------------------
+   /assets/csv				| GET - export
+    * (/assets?type=csv)		|
+   /assets/csv				| POST - import
+    * (/assets?type=csv)		|
 
 ### (ASSETS-PW CHAIN)
-  * /assets/<dc_id>/powerchain			# GET
-    * (/assets/topology/powerchain?id=)		# currently topology call
+
+  URI					|       methods + some desc.
+-----------------------------------------------------------------------
+   /assets/<dc_id>/powerchain		| GET
+    * (/assets/topology/powerchain?id=)	| currently topology call
 
 ### METRICS IN ASSET ns
-   * /assets/<dc_id>/uptime
-   * /assets/<id_rack>/power?type=avg_power_last_day,avg_power_last_week ...    # GET, rack total is does not return much info, but not consistent?
-   * /assets/<id_dc>/indicators/<type>					       	# GET
-   * /assets/<asset_id>/currect_metrics
+
+  URI					|       methods + some desc.
+-----------------------------------------------------------------------
+   /assets/<dc_id>/uptime               |
+   /assets/<id_rack>/power?type=avg_power_last_day,avg_power_last_week ...    | GET, rack total is does not return much info, but not consistent?
+   /assets/<id_dc>/indicators/<type>					      | GET
+   /assets/<asset_id>/currect_metrics   |
 
 
 ### TOPOLOGY IN ASSET ns - TODO
