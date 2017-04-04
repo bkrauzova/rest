@@ -14,11 +14,11 @@ TODO: alerts, maybe admin and sys stuff as well
   * /asset/device/upses			 	# GET
   * /asset/<asset-id>			 	# GET, DELETE (PUT, POST - both done by csv import now)
 
-### EXP/IMP
+#### EXP/IMP
   * /assets/csv					# GET - export
     * (/assets?type=csv)
   * /assets/csv				 	# POST - import
-    *(/assets?type=csv)
+    * (/assets?type=csv)
 
 
 ### TOPOLOGY

@@ -5,6 +5,7 @@ pkglib_LTLIBRARIES = rest.la
 ecppSources = \
 	rest.ecpp \
         assets.ecpp \
+	asset_types.ecpp \
 	error.ecpp \
 	first.ecpp
 
