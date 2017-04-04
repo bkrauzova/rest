@@ -13,18 +13,18 @@
       <method>GET</method>
     </mapping>
     <mapping>
-      <target>assets@rest</target>
-      <url>^/asset/(.+)$</url>
-      <args>
-	<asset_id>$1</asset_id>
-      </args>
-    </mapping>
-    <mapping>
       <target>asset_types@rest</target>
       <url>^/asset/(datacenter|room|rack|device)s$</url>
       <method>GET</method>
       <args>
 	<asset_type>$1</asset_type>
+      </args>
+    </mapping>
+    <mapping>
+      <target>assets@rest</target>
+      <url>^/asset/(.+)$</url>
+      <args>
+	<asset_id>$1</asset_id>
       </args>
     </mapping>
   </mappings>

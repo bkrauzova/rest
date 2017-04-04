@@ -20,4 +20,4 @@
 </%cpp>
         {"output" : "all assets"}
 %   else
-        {"asset_id" : "<$ asset_id $>"}
+        {"id" : "<$ asset_id $>"}
