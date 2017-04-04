@@ -7,7 +7,7 @@ TODO: alerts, topo, maybe admin and sys stuff as well
 ### ASSETS
 
   URI					|       methods + some desc.
------------------------------------------------------------------------
+----------------------------------------|-------------------------------
    /assets				| GET, POST (create)
    /assets/datacenters			| GET
    /assets/rooms			| GET
@@ -20,7 +20,7 @@ TODO: alerts, topo, maybe admin and sys stuff as well
 #### EXP/IMP
 
   URI					|       methods + some desc.
------------------------------------------------------------------------
+----------------------------------------|-------------------------------
    /assets/csv				| GET - export
     * (/assets?type=csv)		|
    /assets/csv				| POST - import
@@ -29,17 +29,17 @@ TODO: alerts, topo, maybe admin and sys stuff as well
 ### (ASSETS-PW CHAIN)
 
   URI					|       methods + some desc.
------------------------------------------------------------------------
+----------------------------------------|-------------------------------
    /assets/<dc_id>/powerchain		| GET
     * (/assets/topology/powerchain?id=)	| currently topology call
 
 ### METRICS IN ASSET ns
 
   URI					|       methods + some desc.
------------------------------------------------------------------------
+----------------------------------------|-------------------------------
    /assets/<dc_id>/uptime               |
    /assets/<id_rack>/power?type=avg_power_last_day,avg_power_last_week ...    | GET, rack total is does not return much info, but not consistent?
-   /assets/<id_dc>/indicators/<type>					      | GET
+   /assets/<id_dc>/indicators/<type>	| GET
    /assets/<asset_id>/currect_metrics   |
 
 
