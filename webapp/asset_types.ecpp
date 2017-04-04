@@ -1,0 +1,66 @@
+<#
+# rest API - asset_types
+#>
+<%pre>
+#include <czmq.h>
+#include <string>
+#include <cxxtools/jsonserializer.h>
+#include <cxxtools/serializationinfo.h>
+
+struct assets
+{
+    std::string id;
+    std::string name;
+};
+
+struct topology
+{
+    std::vector <assets> devices;
+};
+
+void operator<<= (cxxtools::SerializationInfo& si, const assets& asset)
+{
+    si.addMember("id") <<= asset.id;
+    si.addMember("name") <<= asset.name;
+}
+
+void operator<<= (cxxtools::SerializationInfo& si, const topology& topo)
+{
+    si.addMember("devices") <<= topo.devices;
+}
+
+void
+create_response (const std::string asset_id,
+                 const std::string asset_name,
+                 std::vector <assets>& topo)
+{
+    assets asset;
+    asset.id = asset_id;
+    asset.name = asset_name;
+    topo.push_back (asset);
+}
+
+</%pre>
+<%args>
+  // define the query parameters
+    asset_type = request.getArg ("asset_type");
+</%args>
+<%cpp>
+    topology topo;
+    std::vector <assets> asset;
+
+    std::string name;
+    std::string id;
+
+    for (int i = 1; i <= 5; ++i)
+    {
+        id = asset_type + "-" + std::to_string (i);
+        name = "asset_name" + std::to_string (i);
+        create_response (id, name, asset);
+    }
+
+    printf("velikost %d\n", sizeof(asset));
+    topo.devices = std::move (asset);
+    cxxtools::JsonSerializer serializer (reply.out ());
+    serializer.serialize(topo).finish();
+</%cpp>
