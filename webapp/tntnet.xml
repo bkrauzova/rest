@@ -6,27 +6,53 @@
   -->
 <tntnet>
   <mappings>
-    <!-- map ASSETS -->
+    <!-- list all assets -->
     <mapping>
       <target>assets@rest</target>
       <url>^/assets$</url>
       <method>GET</method>
     </mapping>
+    <!-- list all assets of given type-->
     <mapping>
       <target>asset_types@rest</target>
-      <url>^/asset/(datacenter|room|rack|device)s$</url>
+      <url>^/assets/(datacenter|room|rack|device)s$</url>
       <method>GET</method>
       <args>
 	<asset_type>$1</asset_type>
       </args>
     </mapping>
+    <!-- export csv -->
     <mapping>
-      <target>assets@rest</target>
-      <url>^/asset/(.+)$</url>
+      <target>asset_export@rest</target>
+      <url>^/assets/csv$</url>
+      <method>GET|POST</method>
+    </mapping>
+    <!-- input power chain -->
+    <mapping>
+      <target>powerchain@rest</target>
+      <url>^/assets/(.+)/powerchain$</url>
       <args>
 	<asset_id>$1</asset_id>
       </args>
     </mapping>
+    <!-- kpi uptime -->
+    <mapping>
+      <target>uptime@rest</target>
+      <url>^/assets/(.+)/uptime$</url>
+      <args>
+	<asset_id>$1</asset_id>
+      </args>
+    </mapping>
+    <!-- give asset of a specific id -->
+    <mapping>
+      <target>assets@rest</target>
+      <url>^/assets/(.+)$</url>
+      <args>
+	<asset_id>$1</asset_id>
+      </args>
+    </mapping>
+
+
   </mappings>
 
   <!-- listen to a port (empty string means any local interface) -->

@@ -6,7 +6,8 @@
 #include <string>
 #include <cxxtools/jsonserializer.h>
 #include <cxxtools/serializationinfo.h>
-
+#include "json.h"
+    /*
 struct assets
 {
     std::string id;
@@ -39,14 +40,17 @@ create_response (const std::string asset_id,
     asset.name = asset_name;
     topo.push_back (asset);
 }
-
+    */
 </%pre>
 <%args>
   // define the query parameters
     asset_type = request.getArg ("asset_type");
 </%args>
 <%cpp>
-    topology topo;
+
+  jsonify ("", asset_type, reply.out ());
+
+  /*topology topo;
     std::vector <assets> asset;
 
     std::string name;
@@ -63,4 +67,5 @@ create_response (const std::string asset_id,
     topo.devices = std::move (asset);
     cxxtools::JsonSerializer serializer (reply.out ());
     serializer.serialize(topo).finish();
+  */
 </%cpp>

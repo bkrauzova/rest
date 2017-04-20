@@ -7,8 +7,9 @@ ecppSources = \
 	rest.ecpp \
         assets.ecpp \
 	asset_types.ecpp \
-	error.ecpp \
-	first.ecpp
+        powerchain.ecpp \
+	first.ecpp \
+	json.cc
 
 rest_la_SOURCES = \
 	$(ecppSources)

@@ -6,18 +6,34 @@
 #include <cxxtools/jsonserializer.h>
 #include <cxxtools/serializationinfo.h>
 #include <cxxtools/split.h>
-
-
+#include <locale.h>
 </%pre>
+<%request scope="global">
+</%request>
 <%args>
   // define the query parameters
-    asset_id = request.getArg ("asset_id");
+  asset_id = request.getArg ("asset_id");
 </%args>
 <%cpp>
-    log_init ();
-    std::cerr << "log test" << std::endl;
+	// Get rid of locales
+	setenv("LANG", "C", 1);
+	setlocale(LC_ALL, "C");
+	std::setlocale(LC_ALL, "C");
+	std::locale default_locale("C");
+	reply.out().imbue(default_locale);
+	reply.sout().imbue(default_locale);
+	reply.uout().imbue(default_locale);
+    reply.setContentType("application/json;charset=UTF-8");
+
+    std::string url;
+    std::string resp;
+
     if (asset_id.empty ())
+    {
+        url = request.getQuery();
+        resp = "{\"url\" : \"<$ url $>\"}";
+    }
+    else
+        resp = "{\"id\" : \"<$ asset_id $>\"}";
 </%cpp>
-        {"output" : "all assets"}
-%   else
-        {"id" : "<$ asset_id $>"}
+<$ resp $>
