@@ -14,7 +14,7 @@ TODO: alerts, topo, maybe admin and sys stuff as well
    /assets/racks			| GET
    /assets/devices			| GET
    /assets/groups			| GET
-   /assets/device/upses			| GET
+   /assets/device/upses			| makes sence??
    /assets/<asset_id>			| GET, DELETE (PUT - done by csv import now)
 
 #### EXP/IMP
@@ -58,7 +58,7 @@ TODO: alerts, topo, maybe admin and sys stuff as well
     * (/asset/power_topology?filtr=...from)
 
 
-______________________________________________________________________________________________________________________________
+______________________________________________________________________________________________________
 
 ### METRICS
   * /metric/current_metrics?ids=1,2,3,4		# GET, more, than 1 asset?!
@@ -69,13 +69,15 @@ ________________________________________________________________________________
     * (/metric/averages/cs)
 
 ### ALERTS
-  * /alerts				        # GET, aletrs with state (all, active, ack-wip...)
-  * /alerts/<alert_state>
-  * /alerts/<alert_state>/<asset_id>
-  * /alerts/<asset_id>/<alert_state>/<_recursive>
-  * /alerts/rules				# GET, POST
-  * /alerts/rules/<rule_type>				# GET, patter/threshold/all/ single
-  * /alerts/rules/<rule_name>				# GET, PUT (update) skipping par. rule_class (i have no idea what it is good for)
-  * /alerts/<asset_id>/<rule_name> 		# PUT, json ex. {"state":"ignore"}
+
+  URI					|       methods + some desc.
+----------------------------------------|-------------------------------
+  * /alerts				        | GET, aletrs with state (all, active, ack-wip...)
+  * /alerts/<asset_id>/<alert_state>            | GET
+  * /alerts/<asset_id>/<alert_state>/<_recursive> | GET
+  * /alerts/rules				| GET, POST
+  * /alerts/rules/<rule_type>			|  GET, patter/threshold/all/ single
+  * /alerts/rules/<rule_name>			|	 GET, PUT (update) skipping par. rule_class (i have no idea what it is good for)
+  * /alerts/<asset_id>/<rule_name> 		| PUT, json ex. {"state":"ignore"}
 
 ### ADMIN
