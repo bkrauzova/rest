@@ -2,7 +2,7 @@ This document proposes new structure of REST API
 
 NOTE: this is just to give brief overview of the approach I chose. It's not complete.
 
-TODO: alerts, topo, maybe admin and sys stuff as well
+todo: alerts, topo, maybe admin and sys stuff as well
 
 ### ASSETS
 
@@ -61,23 +61,25 @@ TODO: alerts, topo, maybe admin and sys stuff as well
 ______________________________________________________________________________________________________
 
 ### METRICS
-  * /metric/current_metrics?ids=1,2,3,4		# GET, more, than 1 asset?!
-    * (/asset/<asset-id>/current_metrics)
-  * /metric/rack_total?ids=1,2,3&type=total_power,avg_power_last_day          # GET
-  * /metric/datacenter_indicators?ids=1,2,3&type=power,avg_power_last_day     # GET, dc_statistics?
-  * /metrics/averages?type=csv&id=1,23&start=445456...			  # GET exp. avgs
-    * (/metric/averages/cs)
+  URI					|       methods + some desc.
+----------------------------------------|------------------------------
+ /metric/current_metrics?ids=1,2,3,4	|	# GET, more, than 1 asset?!
+ (/asset/<asset-id>/current_metrics) 	|
+  /metric/rack_total?ids=1,2,3&type=total_power,avg_power_last_day  |        # GET
+  /metric/datacenter_indicators?ids=1,2,3&type=power,avg_power_last_day |     # GET, dc_statistics?
+  /metrics/averages?type=csv&id=1,23&start=445456...		|	  # GET exp. avgs
+  (/metric/averages/cs)
 
 ### ALERTS
 
   URI					|       methods + some desc.
 ----------------------------------------|-------------------------------
-  * /alerts				        | GET, aletrs with state (all, active, ack-wip...)
-  * /alerts/<asset_id>/<alert_state>            | GET
-  * /alerts/<asset_id>/<alert_state>/<_recursive> | GET
-  * /alerts/rules				| GET, POST
-  * /alerts/rules/<rule_type>			|  GET, patter/threshold/all/ single
-  * /alerts/rules/<rule_name>			|	 GET, PUT (update) skipping par. rule_class (i have no idea what it is good for)
-  * /alerts/<asset_id>/<rule_name> 		| PUT, json ex. {"state":"ignore"}
+  /alerts				        | GET, aletrs with state (all, active, ack-wip...)
+  /alerts/<asset_id>/<alert_state>            | GET
+  /alerts/<asset_id>/<alert_state>/<_recursive> | GET
+  /alerts/rules				| GET, POST
+  /alerts/rules/<rule_type>			|  GET, patter/threshold/all/ single
+  /alerts/rules/<rule_name>			|	 GET, PUT (update) skipping par. rule_class (i have no idea what it is good for)
+  /alerts/<asset_id>/<rule_name> 		| PUT, json ex. {"state":"ignore"}
 
 ### ADMIN
