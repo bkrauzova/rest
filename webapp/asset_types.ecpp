@@ -7,6 +7,7 @@
 #include <cxxtools/jsonserializer.h>
 #include <cxxtools/serializationinfo.h>
 #include "json.h"
+
     /*
 struct assets
 {

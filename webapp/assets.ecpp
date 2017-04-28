@@ -7,6 +7,7 @@
 #include <cxxtools/serializationinfo.h>
 #include <cxxtools/split.h>
 #include <locale.h>
+#include "json.h"
 </%pre>
 <%request scope="global">
 </%request>
@@ -15,25 +16,14 @@
   asset_id = request.getArg ("asset_id");
 </%args>
 <%cpp>
-	// Get rid of locales
-	setenv("LANG", "C", 1);
-	setlocale(LC_ALL, "C");
-	std::setlocale(LC_ALL, "C");
-	std::locale default_locale("C");
-	reply.out().imbue(default_locale);
-	reply.sout().imbue(default_locale);
-	reply.uout().imbue(default_locale);
-    reply.setContentType("application/json;charset=UTF-8");
-
     std::string url;
-    std::string resp;
 
     if (asset_id.empty ())
     {
         url = request.getQuery();
-        resp = "{\"url\" : \"<$ url $>\"}";
+        jsonify ("", "devices", reply.out ());
     }
     else
-        resp = "{\"id\" : \"<$ asset_id $>\"}";
+        jsonify (asset_id, "", reply.out ());
+
 </%cpp>
-<$ resp $>
