@@ -6,6 +6,8 @@
 *.cpp
 webapp/assets.cpp
 
+
+
 # autoconf
 Makefile
 Makefile.in
@@ -30,6 +32,7 @@ lib*.la
 lib*.so
 lib*.so.*
 *.Plo
+.deps/*.Plo
 
 # Fortran module files
 *.mod

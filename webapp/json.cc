@@ -189,9 +189,59 @@ jsonify (std::string &asset_id, std::string &asset_type, std::ostream &out)
     std::vector <assets> v_devices;
     std::vector <asset_short> v_devices_short;
     std::vector <powerchains> v_powerchains;
+    /*
+    asset_short asset_short;
+    assets asset;
+    powerchains powerchain;
+
+    if (!asset_type.empty ())
+    {
+
+        for (int i = 1; i <= 5; ++i)
+        {
+            std::string id = asset_type + "-" + std::to_string (i);
+            std::string name = "asset_name" + std::to_string (i);
+
+            asset_short.id = id;
+            asset_short.name = name;
+            v_devices_short.push_back (asset_short);
+        }
+
+    }
+
+    // TODO exts
+    if (!asset_id.empty ())
+    {
+        std::string id = asset_type + "-" + id;
+        std::string name = "asset_name" + id;
+
+        asset.id = id;
+        asset.name = name;
+        asset.status = "active";
+        asset.subtype = "my-subtype";
+        asset.priority = "P1";
+        asset.location = "DC01";
+
+        // groups
+        asset_short.id = "10";
+        asset_short.name = "GRP.BIOS";
+        asset.groups.push_back (asset_short);
+        v_devices.push_back (asset);
+    }
+
+    // power chain
+    if (asset_id.empty () && asset_type.empty ())
+    {
+        powerchain.src_id = asset_id;
+        powerchain.dest_id = "epdu-2";
+        powerchain.src_socket = "1";
+        powerchain.dest_socket = "2";
+        v_powerchains.push_back (powerchain);
+    }
+
 
     asset_generator (asset_type, asset_id, v_devices, v_devices_short, v_powerchains);
-
+    */
     topo.asset_type = asset_type;
 
     topo.v_devices_short = std::move (v_devices_short);
