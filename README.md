@@ -83,3 +83,14 @@ ________________________________________________________________________________
   /alerts/<asset_id>/<rule_name> 		| PUT, json ex. {"state":"ignore"}
 
 ### ADMIN
+
+
+
+
+### Run
+terminal:
+$ cd <path_to_rest_folder>/rest/webapp
+$ tntnet
+
+web browser:
+localhost:8000/api/v1/assets
